@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Vehicle Detection </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h1>Smart Vehicle Image Detection</h1>
+        <ul>
+            <li><a href="C:\Users\ASUS\Desktop\SDE\index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <div style="text-align: center; margin-top: 120px;" >
+        <h2  style="border: 0cap; font-family: Times New Roman ,  Times, serif; font-size: xx-large;">Upload an Image</h2>
+        <img src="C:\Users\ASUS\Desktop\SDE\icons8-upload.gif" width="15%" height="15%">
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" name="imageFile" id="imageFile" accept="image/*">
+            <button type="submit" style="padding: 10px 30px;
+                                          text-align: center;
+                                          text-decoration: none;
+                                          display: inline-block ;
+                                          
+                                          font-size: 16px;
+                                          margin: 4px 2px;
+                                          cursor: pointer;
+                                          width: 20%;
+                                          height: 30px;
+                                         
+                                          vertical-align: middle;
+                                          position: relative;
+                                          ">
+                <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) ;">Upload</span>
+            </button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+     
+      
+
+      
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var formData = new FormData();
+            formData.append('imageFile', document.getElementById('imageFile').files[0]);
+
+            // Convert uploaded image to base64
+            var reader = new FileReader();
+            reader.onload = function() {
+                var imageData = reader.result;
+
+                // Store image data in session storage
+                sessionStorage.setItem('imageData', imageData);
+
+                // Redirect to the new page
+                window.location.href = 'result.html';
+            }
+            reader.readAsDataURL(document.getElementById('imageFile').files[0]);
+        });
+    </script>
+
+
+</body>
+</html>
