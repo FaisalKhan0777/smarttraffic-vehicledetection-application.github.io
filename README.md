@@ -2,17 +2,26 @@
 A web-based application that enables users to upload transportation-related images (such as traffic camera images) and perform object detection on those images.
 
 
-Dependencies:
+Installation Instructions
+
+To run this application locally, you need to have Node.js and npm installed on your machine.
+
+
+Dependencies
+
 npm install @tensorflow/tfjs @tensorflow-models/coco-ssd
 @tensorflow/tfjs: TensorFlow.js library for machine learning.
 @tensorflow-models/coco-ssd: COCO-SSD model for object detection.
 
 
+
 Running the Application:
+
  Open your web browser and navigate to http://localhost:8000 (or the port number specified by the server if you changed it).
  
 
 Testing the Application:
+
 1.Upload an Image: Once the web application is loaded in your browser, you can use the provided interface to upload an image for processing.
 2.View the Processed Image: After uploading the image, the application will process it using TensorFlow.js and Coco-ssd to detect vehicles and display the processed image with bounding boxes around the detected vehicles.
 
