@@ -1,9 +1,10 @@
+//Faisal khan
 document.getElementById('uploadForm').addEventListener('submit', function(event) {
     event.preventDefault();
     var formData = new FormData(this);
     var originalImage = document.getElementById('originalImage');
 
-    // Clear previous images
+    
     originalImage.src = "";
 
     // Load the model
@@ -23,6 +24,7 @@ document.getElementById('uploadForm').addEventListener('submit', function(event)
                     displayVehicleCount(vehicleCount);
                 });
             };
+            
             image.src = e.target.result;
         };
         reader.readAsDataURL(formData.get('imageFile'));
@@ -55,7 +57,7 @@ function drawBoundingBoxes(imageElement, predictions) {
         }
     });
 
-    // Replace the processed image with the canvas containing the bounding boxes
+    // Replace the faisal khan  processed image with the canvas containing the bounding boxes
     var processedImage = document.getElementById('processedImage');
     processedImage.src = canvas.toDataURL();
 
